@@ -21,10 +21,35 @@
 
     root.append(child);
 
+    const btn = document.createElement('button');
+    btn.textContent = "Add Highlight";
+
+    btn.addEventListener('click', () => {
+        const className = 'highlight';
+        btn.classList.toggle(className);
+        btn.textContent = `${btn.classList.contains(className) ? "Remove" : "Add"} Highlight`;
+    });
+
+    root.append(btn);
+
     const body = document.getElementsByTagName("BODY")[0];
     if(body){
         body.appendChild(root);
     }
+
+
+    //Reading the Imperative vs Declarative Programming...
+    const double = (array) => {
+        return array.map((num) => num * 2);
+    }
+
+    const add = (array) => {
+        return array.reduce((a,b) => a + b);
+    }
+
+    console.log(double([1,2,3]));
+    console.log(add([1,2,3]));
+
 </script>
 
 </html>
