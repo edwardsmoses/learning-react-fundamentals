@@ -18,7 +18,13 @@
     //   children: 'Hello World',
     // })
 
-    const element = <div className="container"> Hello Worlds </div>
+    const className = 'container';
+    const children = 'Hello World';
+
+    const props = {children, className};
+
+    const displayElement = (props) =>  <div {...props}>{props.children}</div>
+    const element = <displayElement {...props} />;
 
 
     // 💰 there are a few subtle differences between JSX and HTML. One such
